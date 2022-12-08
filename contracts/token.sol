@@ -6,11 +6,16 @@ pragma solidity ^0.8.7;
 
 
 contract Token {
+	// Create a mapping that allows the contract owner to check the balance of any account.
 	mapping(address => uint) public balances;
+	// Create a variable that allows the contract owner to check the total supply of tokens.
 	address public minter;
 	
-	event Sent(address from, address to, uint amount);
 	
+	event Sent(address from, address to, uint amount);
+
+
+	// Create a constructor that allows the contract owner to mint new tokens.
 	constructor() {
 		minter = msg.sender;
 	}
